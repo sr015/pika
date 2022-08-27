@@ -28,8 +28,14 @@ export default function Authenticated({ auth, header, children }) {
                                     stopwatch
                                 </NavLink>
                                 <NavLink href={route('todo.index')} active={route().current('todo.index')}>
-                                    stopwatch
+                                    todo
                                 </NavLink>
+                                <NavLink href={route('countdown')} active={route().current('countdown')}>
+                                    count
+                                </NavLink>
+                                <NavLink href={route('cale')} active={route().current('cale')}>
+                                    calendar
+                                </NavLink>                            
                             </div>
                         </div>
 
