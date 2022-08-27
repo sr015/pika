@@ -22,6 +22,9 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "@fullcalendar/daygrid": "^5.11.3",
+        "@fullcalendar/interaction": "^5.11.3",
+        "@fullcalendar/react": "^5.11.2",
         "npm-watch": "^0.11.0",
         "react-router-dom": "^6.3.0",
         "react-timer-hook": "^3.0.5"
