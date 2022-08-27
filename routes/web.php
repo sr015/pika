@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,26 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dash', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('/todos', TodoController::class)->names([
+    'index' => 'todo.index',
+    'destroy' => 'todo.destroy',
+    'create' => 'todo.create',
+    'store'=> 'todo.store',
+    'edit'=>'todo.edit',
+    'update'=>'todo.update'
+    ]);
+
+Route::get('/stop', function () {
+    return Inertia::render('Rstopwatch');})->name('stopwatch');
+    
+Route::get('/cal', function () {
+    return Inertia::render('Calendar');})->name('cale');
+
+Route::get('/count', function () {
+    return Inertia::render('Rcountdown');})->name('countdown');
 
 require __DIR__.'/auth.php';
